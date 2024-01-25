@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:teamkhagrachari/all_screen/home/Controller/home_provider.dart';
-import 'package:teamkhagrachari/all_screen/home/home_Screen.dart';
+import 'package:teamkhagrachari/material_app.dart';
+
+import 'app/all_screen/home/Controller/home_provider.dart';
+import 'app/all_screen/home/home_Screen.dart';
 
 void main() {
   runApp(
@@ -9,17 +11,8 @@ void main() {
       ChangeNotifierProvider(
         create: (context) => HomeProvider(),
       ),
-    ], child: const MyApp()),
+    ], child: const TeamKhagrachari()),
   );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomeScreen(),
-    );
-  }
-}

@@ -1,11 +1,11 @@
-
 import 'package:flutter/material.dart';
-import 'package:teamkhagrachari/colors/my_app_color.dart';
-import 'package:teamkhagrachari/widget/appbar.dart';
-import 'package:teamkhagrachari/widget/main_category.dart';
-import 'package:teamkhagrachari/widget/mybottom_nav_bar.dart';
-import 'package:teamkhagrachari/widget/news_listview.dart';
-import 'package:teamkhagrachari/widget/slider.dart';
+import 'package:teamkhagrachari/app/const/my_app_color.dart';
+import 'package:teamkhagrachari/app/const/strings.dart';
+import 'package:teamkhagrachari/app/widget/appbar.dart';
+import 'package:teamkhagrachari/app/widget/main_category.dart';
+import 'package:teamkhagrachari/app/widget/mybottom_nav_bar.dart';
+import 'package:teamkhagrachari/app/widget/news_listview.dart';
+import 'package:teamkhagrachari/app/widget/slider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
       floatingActionButton: BottomNavBar.flotingBar(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomNavBar.bottonNavbar(),
-      backgroundColor: MyAppColor.seconderyColor,
+      backgroundColor: seconderyColor,
       drawer: const Drawer(),
       appBar: MyAppbar().myAppbar(),
       body: SingleChildScrollView(
@@ -25,13 +25,13 @@ class HomeScreen extends StatelessWidget {
           child: Column(children: [
             MySlider.sliderImages(),
             const Text(
-              "সার্ভিস সমুহ",
+              services,
               style: TextStyle(fontSize: 23, color: Colors.white),
             ),
             const Divider(),
             MainCategory(),
             const Text(
-              "সর্বশেষ সংবাদ",
+              lastedNews,
               style: TextStyle(fontSize: 23, color: Colors.white),
             ),
             const Divider(),

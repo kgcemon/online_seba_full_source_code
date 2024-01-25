@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:teamkhagrachari/all_screen/home/Controller/home_provider.dart';
-import 'package:teamkhagrachari/all_screen/news_details/fullnews_screen.dart';
+import 'package:teamkhagrachari/app/const/strings.dart';
+import '../all_screen/home/Controller/home_provider.dart';
+import '../all_screen/news_detailsScreen/fullnews_screen.dart';
+
 
 class NewsListView extends StatelessWidget {
   const NewsListView({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Consumer<HomeProvider>(
@@ -21,13 +22,14 @@ class NewsListView extends StatelessWidget {
                   builder: (context) => FullNews(
                       content: value.newList[index].content,
                       thumbnail: value.newList[index].thumbnail,
-                      title: value.newList[index].title),
+                      title: value.newList[index].title,
+                    date: value.newList[index].date,),
                 )),
-            leading: Image.network(value.newList[index].thumbnail,
+            leading: Image.network(value.newList[index].thumbnail,width: 80,
                 fit: BoxFit.cover),
             title: Text(
               value.newList[index].title,
-              style: const TextStyle(fontFamily: 'myfont'),
+              style: const TextStyle(fontFamily: fontsKey),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
             ),

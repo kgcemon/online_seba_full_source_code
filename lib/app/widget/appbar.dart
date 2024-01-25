@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:teamkhagrachari/colors/my_app_color.dart';
+
+import '../const/my_app_color.dart';
 
 class MyAppbar{
   myAppbar(){
@@ -9,6 +10,6 @@ class MyAppbar{
           style:
           TextStyle(fontWeight: FontWeight.bold)),
       actions: const [Icon(Icons.notifications), SizedBox(width: 15,)],
-      backgroundColor: MyAppColor.primaryColor,);
+      backgroundColor: primaryColor,);
   }
 }
